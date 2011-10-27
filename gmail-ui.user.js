@@ -80,12 +80,6 @@ function writeStyles() {
     + '  padding: 7px 27px !important;'
     + '}'
     + ''
-    + '/* Manage This Domain Link */'
-    + '.GcwpPb-MEmzyf {'
-    + '  padding-right: 20px !important;'
-    + '  top: -29px !important;'
-    + '}'
-    + ''
     + '/* Labels */'
     + '.TN {'
     + '  padding-top: 2px !important;'
@@ -109,13 +103,13 @@ function addStyle(css) {
     if (is_safari && !canvasFrameIsReady()) return false;
     var head, style;
     head = getCanvasFrame().getElementsByTagName('head')[0];
-    if (!head) { return; }
+    if (!head) { return false; }
     style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = css;
     head.appendChild(style);
     clearInterval(interval);
-};
+}
 
 function getCanvasFrame() {
     if (!is_safari) return document;
